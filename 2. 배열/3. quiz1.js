@@ -17,7 +17,7 @@ main: while(true){
     var num = prompt('숫자 입력\n그만이라고 입력하면 멈춥니다');
 
     if(num ===stop) break;
-    // !(num === stop) ? numList.push(num) : break main;
+   //!(num === stop) ? numList.push(num) : continue main;
     numList.push(num);
     total += Number(numList[i]);
 
