@@ -27,13 +27,11 @@ public class Rusian {
         // 플레이어 입장 끝
 
         // 실탄 장전 시작
-
         System.out.print("\n실탄 개수 (1 ~ 5개) ==> ");
 
         int bullet = Integer.parseInt(br.readLine());
         int [] bullets = {0, 0, 0, 0, 0};
         int bulletEnd = 0;
-
 
         int playerRd = perRd.nextInt(people.length) + 1;
         int nextPlayernum = playerRd-1;
