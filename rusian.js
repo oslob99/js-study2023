@@ -20,6 +20,7 @@ var i = 1; // 플레이어 순서
     var perRd = Math.floor(Math.random()*people.length)+1;//순서 무작위
     var nextPlayernum = perRd-1; // 다음 플레이어 배열인덱스
     var nextPlayer = ''; //다음 플레이어
+    var winwon = people.length;
 
     alert(`총을 받아부러쓰! ${people[nextPlayernum]} 부터 시작한다이~`);
 
@@ -27,20 +28,21 @@ var i = 1; // 플레이어 순서
         nextPlayer = people[nextPlayernum];// 다음 플레이어 이름
         alert(`[${nextPlayer}의 턴!] 탄창 회전중... \n#엔터 누르거나 닫기 누르면 쏜다이!`);
         
-        while(true){
-            var bulletRd = Math.floor(Math.random()*5)+1;// 총알 위치 무작위
-            if(bullets[bulletRd-1] === 0){bullets[bulletRd-1] = 1;}
+        while(bulletEnd !== bullet){
+            var bulletRd = (Math.floor(Math.random()*5)+1)-1;// 총알 위치 무작위
+            if(bullets[bulletRd] === 0){
+                bullets[bulletRd] = 1;
+                bulletEnd++;
+            }
             else{continue;} // 총알 위치 무작위로 넣은 뒤 중복이면 다시 넣기
-            bulletEnd++;
-            if(bulletEnd === bullet){break;}// 총알 갯수가 다 들어가면 종료
-        }//5개의 탄창에 총알 무작위 위치에 넣기
+        }//5개의 탄창에 총알 무작위 위치에 넣기 // 총알 갯수가 다 들어가면 종료
 
-        //alert(`${bullets} dd`); 탄창배열 잘 들어갔는지 확인용
+        alert(`${people} dd${bullets} dd`); //탄창배열 잘 들어갔는지 확인용
 
         if(bullets[0] === 1){
             alert(`# BANG!! [ ${nextPlayer} ] 바윙~`);
-            people[nextPlayernum] = '';
-            bullet--; nextPlayernum++; bulletEnd--;
+            people.splice(nextPlayernum,1);
+            bullet--;bulletEnd--;
         }// 총에 맞았을 때 
         else{
             bullets = [0, 0, 0, 0, 0];
@@ -49,16 +51,15 @@ var i = 1; // 플레이어 순서
             nextPlayernum++;
         }// 총에 맞지 않았을 때
 
-        if(nextPlayernum === people.length){
+        if(nextPlayernum === winwon){
             nextPlayernum = 0;
         }// 다음 순서로 넘어갈때 다음 인덱스가 없을 시 0번째로
 
-        if(bullet === 0) {
-            alert(`게임 끝!\n[ ${people} ] 생존!!!!`);
-            break;
-        }// 게임종료, 생존한 인원들 출력
+        if(bullet === 0) {break;}// 게임종료, 생존한 인원들 출력
 
     }// 러시안룰렛 게임 끝날때까지 반복
+
+    alert(`게임 끝!\n[ ${people} ] 생존!!!!`);
 
 
 
