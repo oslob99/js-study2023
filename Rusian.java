@@ -48,7 +48,7 @@ public class Rusian {
             while (true){
                 int bulletRd = perRd.nextInt(5) + 1;
                 if(bullets[bulletRd-1] == 1) {continue;}
-                else {bullets[bulletRd-1] = 1;}
+                else {bullets[bulletRd-1] == 1;}
                 bulletEnd++;
                 if(bulletEnd == bullet){break;}
             }// 5개의 탄창 안에 랜덤한 위치에 입력한 탄알 갯수를 탄창에 저장
