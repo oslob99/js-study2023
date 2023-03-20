@@ -30,19 +30,19 @@ var userInfo = {
 };
 
 var userList = userInfo.userList;// 회원목록 배열
-var i = 0;
 
-id: while(true){
-    var loginID = prompt('계정 ID입력하시오'); // ID입력
+var inputAccount = prompt('아이디 입력'); // 아이디 입력
+var foundUser = null;
 
-    if(loginID === userInfo.userList[i].account){break id;}
-    else{continue id; i++;}
+for(var k of userList){
+    if( inputAccount === k.account){
+        foundUser = k;
+    }
+}
+if(foundUser !== null){
     
-}// ID 있는지 확인
-    
-main: while(true){
-    
-    
+}
 
-    alert('aaa');
-}// 계정 로그인 반복시도
+
+
+// 계정 로그인 반복시도

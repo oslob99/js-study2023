@@ -24,7 +24,7 @@
     return bmi;
  }
  function round(bmi, rod){
-    var k = parseInt(bmi * (10 ** rod)) / (10 ** rod);
+    var k = Math.round(bmi * (10 ** rod)) / (10 ** rod);
     return k;
  }
  //호출
