@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .sign {
+            display: inline-block;
+            color: green;
+        }
+
+        .move {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="luches" class="menu">
+        <div class="sign">▶</div>
+        <span class="title">추천 메뉴(Click Me!)</span>
+        <ul>
+            <li>돈까스</li>
+            <li>군만두</li>
+            <li>볶음밥</li>
+            <li>마파두부</li>
+        </ul>
+    </div>
+    <script>
+        const $menu = document.querySelector('.menu');
+        const $title = document.querySelector('.title');
+        const $ul = document.querySelector('ul');
+        const $sign = document.querySelector('.sign');
+
+        $menu.onclick = () => {
+            $ul.classList.contains('hide') ? $ul.classList.remove('hide') :
+                $ul.classList.add('hide');
+            $sign.classList.contains('move') ? $sign.classList.remove('move') :
+                $sign.classList.add('move');
+
+        };
+    </script>
+
+</body>
+
+</html>

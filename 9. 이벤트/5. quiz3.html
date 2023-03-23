@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown .btn{
+            width: 100px;
+            height: 40px;
+            font-size: 15px;
+
+            color: #fff;
+            background: rgb(180, 25, 25);
+
+            margin-left: 50px;
+        }
+        .show{
+            display: block !important;
+        }
+        .dropdown div a{
+            margin: 2px 0 0 50px;
+            display: block;
+            width: 110px;
+            height: 40px;
+            line-height: 40px;
+
+            font-size: 17px;
+            text-align: center;
+            text-decoration: none;
+            background-color: silver;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="btn">Drop</button>
+        <div style="display: none;" id="drop-content">
+            <a href="">Menu1</a>
+            <a href="">Menu2</a>
+            <a href="">Menu3</a>
+            <a href="">Menu4</a>
+            <a href="">Menu5</a>
+        </div>
+    </div>
+
+    <script>
+        const $btn = document.querySelector('.btn');
+        const $dropCon = document.getElementById('drop-content');
+
+        $btn.onmouseenter = () => {
+            $dropCon.classList.add('show');
+        };
+        $btn.onmouseout = () => {
+            $dropCon.classList.remove('show');
+        };
+
+    </script>
+    
+</body>
+</html>
