@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #greet span{
+            color: red;
+        }
+        #greet::before{
+            content: "what's up!";
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="greet">
+        Hello <span>World!</span>
+    </div>
+
+    <script>
+        const $greet = document.getElementById('greet');
+        console.log($greet.textContent);
+
+        // $greet.textContent = '하이루';
+        $greet.innerHTML = '<span>하이</span>루';
+
+        //모든 자식태그를 삭제
+        // $$greet.innerHTML = '';
+
+        // 자식 태그를 추가
+        $greet.innerHTML += '<span>망ㄹ내ㅓ</span>'
+
+    </script>
+
+</body>
+</html>
