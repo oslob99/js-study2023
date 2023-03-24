@@ -45,15 +45,30 @@
         const $text = document.querySelector('.text-box');
         const $btn = document.getElementById('add');
 
+        const makeNewFruit = () =>{
 
-
-        $btn.addEventListener('click', ()=>{
             const $add = document.createElement('li');
             $fruits.appendChild($add);
-            console.log($text.value);
             $add.setAttribute('id', $text.value);
             $fruits.lastChild.textContent = $text.value;
-        });
+        
+        }
+
+        $btn.onclick = (e)=>{makeNewFruit()};
+        $text.onkeyup = (e) =>{
+            // console.log(e);
+            if(e.key === 'Enter'){
+                makeNewFruit();
+            }
+        };
+
+        /*
+            입력창에 과일 이름을 쓰고
+            '추가' 버튼을 누르면 <-- 이벤트
+            입력창에 있는 텍스트가
+            <li id='텍스트'>텍스트</li>
+            이런 형태로 생성되어 ul의 끝자식으로 추가
+        */
 
 
 
@@ -76,7 +91,6 @@
             });
         };
 
-
         $fruits.onclick = e => {
 
             // 이벤트 타겟 제한
@@ -85,7 +99,6 @@
             if(!e.target.matches('#fruits li')){
                 return;
             }
-
 
             // console.log('클릭이벤트 발생');
             // console.log(e.target);
